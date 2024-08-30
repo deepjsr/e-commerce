@@ -17,11 +17,11 @@ import { PageNotFoundComponent } from './shared/layouts/page-not-found/page-not-
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
   },
   {

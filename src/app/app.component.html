@@ -1,3 +1,13 @@
 <app-header></app-header>
-<router-outlet />
+<button
+  ngxScrollTop
+  [ngxScrollTopMode]="'smart'"
+  class="my-custom-style"
+  color="primary"
+  mat-mini-fab
+>
+  top
+</button>
+<router-outlet (activate)="active()" />
 <app-footer></app-footer>
+<ngx-scrolltop></ngx-scrolltop>
