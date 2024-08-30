@@ -1,1 +1,50 @@
-<p>signin works!</p>
+<div class="jumbotron">
+  <div class="container">
+    <div class="form-row">
+      <div class="col-md-6 offset-md-3">
+        <h3>Registration - Angular 17 Reactive Forms with validation</h3>
+        <form action="" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" class="form-control" formControlName="mobileNumber">
+          </div>
+          <div class="form-group">
+            <label for="age">Enter your age</label>
+            <input type="number" class="form-control" formControlName="age">
+          </div>
+          <div class="form-group">
+            <label for="dob">Enter your DOB</label>
+            <input type="text" class="form-control" formControlName="dob">
+          </div>
+          <!------New Row-------->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" placeholder="example@mail.com" formControlName="email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="password">Password</label>
+              <input type="password" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="Address">Address</label>
+              <input type="text" class="form-control" placeholder="123 street" formControlName="addLine1">
+            </div>
+            <div class="form-group">
+              <label for="Address">Address 2</label>
+              <input type="text" class="form-control" placeholder="apertment,block,floor" formControlName="addLine2">
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="form-row">
+      
+    </div>
+  </div>
+</div>
