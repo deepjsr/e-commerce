@@ -28,7 +28,37 @@
       "role": "admin",
 
       "id": 1
+    },
+    {
+      "name": "Ashish Mishra",
+
+      "mobNumber": "1234567891",
+      "age": 29,
+      "dob": "1995-05-12",
+      "email": "admin12@gmail.com",
+      "password": "123456a",
+      "address": {
+        "addLine1": "District Center",
+        "addLine2": "Janakpuri",
+        "city": "New Delhi",
+        "state": "Delhi",
+        "zipCode": "110052"
+      },
+
+      "language": ["English", "Hindi", "Bhojpuri", "Telgu", "Kannada"],
+      "gender": "Male",
+
+      "aboutYou": "I am a programmer...",
+
+      "uploadPhoto": "ashish.png",
+
+      "agreetc": true,
+
+      "role": "seller",
+
+      "id": 1
     }
+
   ],
   "products": [
     {

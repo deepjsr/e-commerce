@@ -1,12 +1,12 @@
 <div class="col-md-6 offset-md-3">Login-Angular 17 Templet driven form with validation</div>
-<form>
+<form name="form" #tf="ngForm" (ngSubmit)="tf.form.valid && OnsubmitSignIn()" novalidate>
   <div class="form-group">
     <label for="mail">Email</label>
-    <input type="mail" class="form-control" name="userEmail">
+    <input type="mail" class="form-control" name="userEmail" #userEmail="ngModel" [(ngModel)]="signInFormValue.userEmail">
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" class="form-control" name="userPassword">
+    <input type="password" class="form-control" name="userPassword" #userEmail="ngModel" [(ngModel)]="signInFormValue.password" minlength="6" togglPassword>
   </div>
   <div class="form-group">
     <button class="btn btn-primary">Login</button>
