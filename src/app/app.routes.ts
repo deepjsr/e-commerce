@@ -13,6 +13,13 @@ import { BuyerDashboardComponent } from './customer/buyer/buyer-dashboard/buyer-
 import { CheckoutComponent } from './customer/buyer/checkout/checkout.component';
 import { PageNotFoundDirective } from './shared/directives/page-not-found.directive';
 import { PageNotFoundComponent } from './shared/layouts/page-not-found/page-not-found.component';
+import {
+  AdminAuthGuardLogin,
+  AdminAuthGuardService,
+  BuyerAuthGuardService,
+  SellerAuthGuardService,
+  SellerBuyerAuthGuardLogin,
+} from './shared/services/auth-guards.service';
 
 export const routes: Routes = [
   {
@@ -36,10 +43,12 @@ export const routes: Routes = [
   // Admin
   {
     path: '',
+    canActivate: [AdminAuthGuardLogin],
     children: [{ path: 'admin-login', component: AdminLoginComponent }],
   },
   {
     path: '',
+    canActivate: [AdminAuthGuardService],
     children: [
       { path: 'admin-dashboard', component: AdminDashboardComponent },
       { path: 'admin/user', component: UserCrudComponent },
@@ -47,24 +56,31 @@ export const routes: Routes = [
     ],
   },
   {
-    path:'',children:[
-      {path:'sign-in',component:SigninComponent},
-      {path:'sign-up',component:SignupComponent}
-    ]
+    path: '',
+    canActivate: [SellerBuyerAuthGuardLogin],
+    children: [
+      { path: 'sign-in', component: SigninComponent },
+      { path: 'sign-up', component: SignupComponent },
+    ],
   },
   {
-    path:'',children:[
-      {path:'seller-dashboard',component:SellerDashboardComponent},
-      {path:'seller/product',component:ProductComponent}
-    ]
+    path: '',
+    canActivate: [SellerAuthGuardService],
+    children: [
+      { path: 'seller-dashboard', component: SellerDashboardComponent },
+      { path: 'seller/product', component: ProductComponent },
+    ],
   },
   {
-    path:'',children:[
-      {path:'buyer-dashboard',component:BuyerDashboardComponent},
-      {path:'checkout',component:CheckoutComponent}
-    ]
+    path: '',
+    canActivate: [BuyerAuthGuardService],
+    children: [
+      { path: 'buyer-dashboard', component: BuyerDashboardComponent },
+      { path: 'checkout', component: CheckoutComponent },
+    ],
   },
   {
-    path:'**',component:PageNotFoundComponent
-  }
+    path: '**',
+    component: PageNotFoundComponent,
+  },
 ];

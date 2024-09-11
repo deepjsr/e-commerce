@@ -1,64 +1,159 @@
 {
   "user": [
     {
-      "name": "Ashish Mishra",
-
+      "name": "Vinod Behra",
       "mobNumber": "1234567891",
       "age": 29,
       "dob": "1995-05-12",
-      "email": "admin@gmail.com",
-      "password": "123456",
+      "email": "viond12@gmail.com",
+      "password": "1234b6a",
       "address": {
         "addLine1": "District Center",
         "addLine2": "Janakpuri",
-        "city": "New Delhi",
-        "state": "Delhi",
+        "city": "Gurgaon",
+        "state": "New Delhi",
         "zipCode": "110052"
       },
-
       "language": ["English", "Hindi", "Bhojpuri", "Telgu", "Kannada"],
       "gender": "Male",
-
       "aboutYou": "I am a programmer...",
-
       "uploadPhoto": "ashish.png",
-
       "agreetc": true,
-
       "role": "admin",
-
-      "id": 1
+      "id": 2
     },
     {
-      "name": "Ashish Mishra",
-
-      "mobNumber": "1234567891",
-      "age": 29,
-      "dob": "1995-05-12",
-      "email": "admin12@gmail.com",
-      "password": "123456a",
+      "name": "Ravi Kumar",
+      "mobNumber": "7894561230",
+      "age": 30,
+      "dob": "1993-01-23",
+      "email": "ravi.kumar23@yahoo.com",
+      "password": "ravi@123",
       "address": {
-        "addLine1": "District Center",
-        "addLine2": "Janakpuri",
+        "addLine1": "M.G Road",
+        "addLine2": "Sector 14",
+        "city": "Gurgaon",
+        "state": "Haryana",
+        "zipCode": "122001"
+      },
+      "language": ["English", "Hindi", "Punjabi"],
+      "gender": "Male",
+      "aboutYou": "I am a data analyst.",
+      "uploadPhoto": "ravi.png",
+      "agreetc": true,
+      "role": "seller",
+      "id": 4
+    },
+    {
+      "name": "Sneha Verma",
+      "mobNumber": "9638527410",
+      "age": 28,
+      "dob": "1996-04-18",
+      "email": "snehaverma96@hotmail.com",
+      "password": "snehapass",
+      "address": {
+        "addLine1": "Connaught Place",
+        "addLine2": "Central Delhi",
         "city": "New Delhi",
         "state": "Delhi",
-        "zipCode": "110052"
+        "zipCode": "110001"
       },
-
-      "language": ["English", "Hindi", "Bhojpuri", "Telgu", "Kannada"],
-      "gender": "Male",
-
-      "aboutYou": "I am a programmer...",
-
-      "uploadPhoto": "ashish.png",
-
+      "language": ["English", "Hindi", "Bengali"],
+      "gender": "Female",
+      "aboutYou": "I am a UI/UX designer.",
+      "uploadPhoto": "sneha.png",
       "agreetc": true,
-
+      "role": "buyer",
+      "id": 5
+    },
+    {
+      "name": "Arjun Mehta",
+      "mobNumber": "7410852963",
+      "age": 35,
+      "dob": "1989-09-12",
+      "email": "arjun_mehta@gmail.com",
+      "password": "arjun1989",
+      "address": {
+        "addLine1": "Sector 15",
+        "addLine2": "Dwarka",
+        "city": "New Delhi",
+        "state": "Delhi",
+        "zipCode": "110075"
+      },
+      "language": ["English", "Hindi"],
+      "gender": "Male",
+      "aboutYou": "I am a marketing strategist.",
+      "uploadPhoto": "arjun.png",
+      "agreetc": true,
       "role": "seller",
-
-      "id": 1
+      "id": 6
+    },
+    {
+      "name": "Aarti Sharma",
+      "mobNumber": "8529631470",
+      "age": 32,
+      "dob": "1991-03-05",
+      "email": "aartisharma91@gmail.com",
+      "password": "aartipass",
+      "address": {
+        "addLine1": "Kalyani Nagar",
+        "addLine2": "Pune",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "zipCode": "411014"
+      },
+      "language": ["English", "Marathi", "Hindi"],
+      "gender": "Female",
+      "aboutYou": "I am a digital marketer.",
+      "uploadPhoto": "aarti.png",
+      "agreetc": true,
+      "role": "buyer",
+      "id": 7
+    },
+    {
+      "name": "Deepak Rao",
+      "mobNumber": "7981234560",
+      "age": 40,
+      "dob": "1983-10-19",
+      "email": "deepak_rao83@outlook.com",
+      "password": "deepak83",
+      "address": {
+        "addLine1": "Whitefield",
+        "addLine2": "Bangalore",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560066"
+      },
+      "language": ["English", "Kannada", "Telugu", "Hindi"],
+      "gender": "Male",
+      "aboutYou": "I am a project manager.",
+      "uploadPhoto": "deepak.png",
+      "agreetc": true,
+      "role": "seller",
+      "id": 8
+    },
+    {
+      "name": "Meera Iyer",
+      "mobNumber": "9087412583",
+      "age": 29,
+      "dob": "1995-11-02",
+      "email": "meera.iyer95@gmail.com",
+      "password": "meera123",
+      "address": {
+        "addLine1": "Nungambakkam",
+        "addLine2": "Chennai",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "zipCode": "600034"
+      },
+      "language": ["English", "Tamil", "Hindi"],
+      "gender": "Female",
+      "aboutYou": "I am a content writer.",
+      "uploadPhoto": "meera.png",
+      "agreetc": true,
+      "role": "buyer",
+      "id": 9
     }
-
   ],
   "products": [
     {
@@ -155,38 +250,25 @@
   "orders": [
     {
       "id": 1,
-
       "userId": 3,
-
       "sellerId": 2,
       "product": {
         "id": 1,
-
         "name": "Polyester Door Curtain",
-
         "uploadPhoto": "https://rukminimi.flixcart.com/image/832/832/jcf487k0/curtain/w/e/y/elegant-cream-door-curtains-set-of-2-213-soe-fsb-120-120-eyelet-original-imaffk7f9wng4v4m.jpeg",
         "productDesc": "Transform the ambiance of your home with these elegant, crushed texture, light weight, solid color curtains. These curtains are available in several colors and sizes to match to your home decor and the gracefully flowing polyester is durable and machine washable for your convenience.",
-
         "mгр": "1000",
-
         "dp": "499",
-
         "status": "publish"
       },
-
       "deliveryAddress": {
         "id": 0,
-
         "addLinel": "Marathalli",
-
         "addLine2": "Aswathnagar",
-
         "city": "Bangalore",
         "state": "Choose...",
-
         "zipCode": 560037
       },
-
       "contact": "09040398006",
       "dateTime": "18/07/2019"
     }

@@ -1,1 +1,181 @@
-<p>user-crud works!</p>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-10">
+    <strong>All User list</strong>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-dark float-right" type="button" (click)="addUserPopUp()" data-bs-toggle="modal"
+      data-bs-target="#addEditUserModal">Add New User</button>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Email</th>
+      <th scope="col">DOB</th>
+      <th scope="col">City</th>
+      <th scope="col">Role</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user_data of all_user_data; let i=index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{user_data.name}}</td>
+      <td>{{user_data.mobNumber}}</td>
+      <td>{{user_data.email}}</td>
+      <td>{{user_data.dob}}</td>
+      <td>{{user_data.address.city}}</td>
+      <td>{{user_data.role}}</td>
+      <td>
+        <span class="sim-pointer" (click)="editUserPopUp(user_data.id)" data-bs-toggle="modal"
+          data-bs-target="#addEditUserModal">Edit
+          <mat-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000513">
+              <path
+                d="M360-600v-80h360v80H360Zm0 120v-80h360v80H360Zm120 320H200h280Zm0 80H240q-50 0-85-35t-35-85v-120h120v-560h600v361q-20-2-40.5 1.5T760-505v-295H320v480h240l-80 80H200v40q0 17 11.5 28.5T240-160h240v80Zm80 0v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-300L683-80H560Zm300-263-37-37 37 37ZM620-140h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+            </svg>
+          </mat-icon>
+        </span>
+        &nbsp; &nbsp;
+        <span class="sim-pointer-del" (click)="deleteUser(user_data.id)" aria-hidden="true">Del
+          <mat-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#13171f">
+              <path
+                d="M640-520v-80h240v80H640Zm-280 40q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm80-80h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0-80Zm0 400Z" />
+            </svg>
+          </mat-icon>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal for add user and edit user -->
+
+<div class="modal fade" id="addEditUserModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="addEditUserModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addEditUserModal">{{popup_header}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="add_edit_user_form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" class="form-control" formControlName="mobileNumber">
+          </div>
+          <div class="form-group">
+            <label for="age">Enter your age</label>
+            <input type="number" class="form-control" formControlName="age">
+          </div>
+          <div class="form-group">
+            <label for="dob">Enter your DOB</label>
+            <input type="date" class="form-control" formControlName="dob">
+          </div>
+          <!------New Row-------->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" placeholder="example@mail.com" formControlName="email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="form-group">
+              <label for="Address">Address</label>
+              <input type="text" class="form-control" placeholder="123 street" formControlName="addLine1">
+            </div>
+            <div class="form-group">
+              <label for="Address">Address 2</label>
+              <input type="text" class="form-control" placeholder="apertment,block,floor" formControlName="addLine2">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="city">City</label>
+              <input type="text" class="form-control" placeholder="City" formControlName="city">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="state">State</label>
+              <select name="state" id="inputState" class="form-control" formControlName="state">
+                <option selected>Choose...</option>
+                <option>MP</option>
+                <option>Up</option>
+                <option>HImachal Pradesh</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="zipCode">Zip Code</label>
+              <input type="text" class="form-control" placeholder="zip-code" formControlName="zipCode">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="language">Language</label>
+            <select multiple class="form-control" formControlName="language">
+              <option value="hindi">Hindi</option>
+              <option value="telgu">Telgu</option>
+              <option value="odiya">Odiya</option>
+              <option value="Bhojpuri">Bhojpuri</option>
+              <option>Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-inline" formControlName="gender" value="male">
+              <label for="male" class="form-check-inline">Male</label>
+            </div>
+            <div class="form-check-inline">
+              <input type="radio" class="form-check-inline" formControlName="gender" value="Female">
+              <label for="female" class="form-check-inline">Female</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input type="radio" class="form-check-inline" formControlName="gender" value="others" disable>
+              <label for="others" class="form-check-inline">Others</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="somethingAboutYou" class="form-check-inline">Something About You</label>
+            <textarea class="form-control" rows="3" formControlName="aboutYou"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="uploadPhoto" class="form-check-inline">Upload Your Photo</label>
+            <input type="file" class="form-control" formControlName="uploadPhoto">
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-check-inline" formControlName="agreetc">
+            <label for="agreetc" class="form-check-inline">Terms and Conditions</label>
+          </div>
+          <div class="form-group">
+            <label for="role">Choose your role</label>
+            <select class="form-control" formControlName="role">
+              <option value="admin">Admin</option>
+              <option value="seller">Seller</option>
+              <option value="buyer">Buyer</option>
+            </select>
+          </div>
+          <div class="form-group">
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" (click)="addUser()" data-bs-dismiss="modal" *ngIf="add_user">Register</button>
+        <button class="btn btn-primary" (click)="updateUser()" data-bs-dismiss="modal" *ngIf="edit_user">Update</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

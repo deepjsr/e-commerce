@@ -1,0 +1,14 @@
+button {
+  background: black;
+  display: contents;
+}
+
+.dark-mood {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-icon {
+  color: gray;
+}

@@ -33,25 +33,26 @@ export class SigninComponent {
           this.user_data = data;
           if (this.user_data.length == 1) {
             if (this.user_data[0].role == 'seller') {
-              sessionStorage.setItem('User_session_id', this.user_data[0].id);
-              sessionStorage.setItem('Role: ', this.user_data[0].role);
+              sessionStorage.setItem('user_session_id', this.user_data[0].id);
+
+              sessionStorage.setItem('role', this.user_data[0].role);
               this._router.navigateByUrl('/seller-dashboard');
             } else if (this.user_data[0].role == 'buyer') {
-              sessionStorage.setItem('User_session_id', this.user_data[0].id);
-              sessionStorage.setItem('Role: ', this.user_data[0].role);
+              sessionStorage.setItem('user_session_id', this.user_data[0].id);
+              sessionStorage.setItem('role', this.user_data[0].role);
               this._router.navigateByUrl('/buyer-dashboard');
             } else {
-              alert('INVELID CREDENTIAL 😒!');
-              // Swal.fire({
-              //   icon: 'error',
-              //   title: 'Oops... 😒',
-              //   text: 'Invalid credential..!',
-              // });
+              // alert('INVELID CREDENTIAL 😒!');
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops... 😒',
+                text: 'Invalid credential..!',
+              });
             }
           }
           console.log(this.user_data);
         },
         (error) => console.error(error)
       );
-  }
+    }
 }

@@ -1,23 +1,28 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { User } from '../../core/model/object-model';
 import { LoginSignupService } from '../../shared/services/login-signup.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, RouterLink,HttpClientModule,ReactiveFormsModule],
+  imports: [CommonModule, RouterLink, HttpClientModule, ReactiveFormsModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
 })
 export class SignupComponent {
   regform: boolean = false;
   signUpForm!: FormGroup;
-  signIn!: FormGroup;
+  signInForm!: FormGroup;
   signUpsubmitted = false;
   herf: string = '';
   user_data: any;
@@ -60,7 +65,6 @@ export class SignupComponent {
       aboutYou: ['', Validators.required],
     });
   }
-
   get rf() {
     return this.signUpForm.controls;
   }
@@ -69,32 +73,33 @@ export class SignupComponent {
     if (this.signUpForm.invalid) {
       return;
     }
-    this.user_reg_data=this.signUpForm.value;
-    this.user_dto={
-      aboutYou:this.user_reg_data.aboutYou,
-      age:this.user_reg_data.age,
-      agreetc:this.user_reg_data.agreetc,
-      dob:this.user_reg_data.dob,
-      email:this.user_reg_data.email,
-      gender:this.user_reg_data.gender,
-      address:{
-        id:this.user_reg_data.id,
-        addLine1:this.user_reg_data.addLine1,
-        addLine2:this.user_reg_data.addLine2,
-        city:this.user_reg_data.city,
-        state:this.user_reg_data.state,
-        zipCode:this.user_reg_data.zipCode,
+    this.user_reg_data = this.signUpForm.value;
+    this.user_dto = {
+      aboutYou: this.user_reg_data.aboutYou,
+      age: this.user_reg_data.age,
+      agreetc: this.user_reg_data.agreetc,
+      dob: this.user_reg_data.dob,
+      email: this.user_reg_data.email,
+      gender: this.user_reg_data.gender,
+      address: {
+        id: this.user_reg_data.id,
+        addressLine1: this.user_reg_data.addressLine1,
+        addressLine2: this.user_reg_data.addressLine2,
+        city: this.user_reg_data.city,
+        state: this.user_reg_data.state,
+        zipCode: this.user_reg_data.zipCode,
       },
-      language:this.user_reg_data.language,
-      mobileNumber:this.user_reg_data.mobNumber,
-      name:this.user_reg_data.name,
-      password:this.user_reg_data.password,
-      uploadPhoto:this.user_reg_data.uploadPhoto,
-      role:this.user_reg_data.role,
-    }
-    this._logInSignupService.userRegister(this.user_dto).subscribe(data=>{
-      Swal.fire("User Registered Successfulu!");
-      this._router.navigateByUrl('/sign-in')
-    })
+      language: this.user_reg_data.language,
+      mobileNumber: this.user_reg_data.mobNumber,
+      name: this.user_reg_data.name,
+      password: this.user_reg_data.password,
+      uploadPhoto: this.user_reg_data.uploadPhoto,
+      role: this.user_reg_data.role,
+    };
+    this._logInSignupService.userRegister(this.user_dto).subscribe((data) => {
+      // alert('User Registered Successfully!');
+      Swal.fire('User Registered Successfully!');
+      this._router.navigateByUrl('/sign-in');
+    });
   }
 }

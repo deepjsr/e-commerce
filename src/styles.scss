@@ -1,0 +1,33 @@
+// @use "@angular/material" as mat;
+
+// @include mat.core();
+// @use "@angular/material" as mat;
+// @use "./path/to/my-theme";
+
+// @include mat.core();
+
+// html {
+//   // Apply the light theme by default
+//   @include mat.core-theme(my-theme.$light-theme);
+//   @include mat.button-theme(my-theme.$light-theme);
+
+//   // When using system variables, remember to provide values for them
+//   // or uncomment the lines below to generate them from the theme.
+//   @include mat.system-level-colors(my-theme.$light-theme);
+//   @include mat.system-level-typography(my-theme.$light-theme);
+// }
+// $theme: mat.define-theme(
+//   (
+//     color: (
+//       theme-type: dark,
+//       primary: mat.$violet-palette,
+//     ),
+//     typography: (
+//       brand-family: "Comic Sans",
+//       bold-weight: 900,
+//     ),
+//     density: (
+//       scale: -1,
+//     ),
+//   )
+// );
