@@ -13,7 +13,7 @@ import { User } from '../../core/model/object-model';
 import Swal from 'sweetalert2';
 import { MatIconModule } from '@angular/material/icon';
 
-declare var jQuery: any;
+declare var $: any;
 @Component({
   selector: 'app-user-crud',
   standalone: true,
@@ -33,7 +33,7 @@ export class UserCrudComponent implements OnInit {
   add_edit_user: boolean = false; //form validation
   edit_user: boolean = false;
   popup_header!: string;
-  signInFormValue: any = [];
+  signInFormValue: any = {};
   user_reg_data: any;
   constructor(
     private _formBuilder: FormBuilder,
@@ -67,7 +67,6 @@ export class UserCrudComponent implements OnInit {
     this._adminService.alluser().subscribe(
       (data) => {
         console.log(data);
-
         this.all_user_data = data;
       },
       (error) => {
@@ -75,6 +74,7 @@ export class UserCrudComponent implements OnInit {
       }
     );
   }
+
   get rf() {
     return this.add_edit_user_form.controls;
   }
@@ -102,8 +102,8 @@ export class UserCrudComponent implements OnInit {
         gender: this.user_registration_data.gender,
         address: {
           id: this.user_registration_data.id,
-          addressLine1: this.user_registration_data.addressLine1,
-          addressLine2: this.user_registration_data.addressLine2,
+          addressLine1: this.user_registration_data.addLine1,
+          addressLine2: this.user_registration_data.addLine2,
           city: this.user_registration_data.city,
           state: this.user_registration_data.state,
           zipCode: this.user_registration_data.zipCode,
@@ -115,19 +115,21 @@ export class UserCrudComponent implements OnInit {
         uploadPhoto: this.user_registration_data.uploadPhoto,
         role: this.user_registration_data.role,
       };
-      alert(JSON.stringify(this.user_dto));
     }
     this._adminService.addUser(this.user_dto).subscribe(
       (data) => {
-        this.add_edit_user_form.reset();
         this.getAllUser();
-        jQuery('#addEditUserModal').modal('toggle');
+        $('#addEditUserModal').modal('toggle');
+        this.add_edit_user_form.reset();
+        let ref = document.getElementById('close');
+        ref?.click();
       },
       (error) => console.error('Error opening form', error)
     );
   }
   editUserPopUp(user_id: any) {
     this.edit_user_id = user_id;
+
     this.edit_user = true;
     this.add_user = false;
     this.popup_header = 'Edit User';
@@ -135,20 +137,21 @@ export class UserCrudComponent implements OnInit {
       (data) => {
         this.single_user_data = data;
         this.upload_file_name = this.single_user_data.uploadPhoto;
-        this.add_edit_user_form.setValue({
+        this.add_edit_user_form.patchValue({
           name: this.single_user_data.name,
           email: this.single_user_data.email,
           age: this.single_user_data.age,
           dob: this.single_user_data.dob,
+          mobileNumber: this.single_user_data.mobileNumber,
           password: this.single_user_data.password,
           role: this.single_user_data.role,
           gender: this.single_user_data.gender,
           language: this.single_user_data.language,
-          addressLine1: this.single_user_data.addressl1,
-          addressLine2: this.single_user_data.addressl2,
-          city: this.single_user_data.city,
-          state: this.single_user_data.state,
-          zipCode: this.single_user_data.zipCode,
+          addressLine1: this.single_user_data.address.addLine1,
+          addressLine2: this.single_user_data.address.addLine2,
+          city: this.single_user_data.address.city,
+          state: this.single_user_data.address.state,
+          zipCode: this.single_user_data.address.zipCode,
           aboutYou: this.single_user_data.aboutYou,
           uploadPhoto: '',
           agreetc: this.single_user_data.agreetc,
@@ -167,39 +170,41 @@ export class UserCrudComponent implements OnInit {
       this.user_registration_data = this.add_edit_user_form.value;
       this.user_dto = {
         aboutYou: this.user_registration_data.aboutYou,
-        age: this.user_reg_data.age,
-        agreetc: this.user_reg_data.agreetc,
-        dob: this.user_reg_data.dob,
-        email: this.user_reg_data.email,
-        gender: this.user_reg_data.gender,
+        age: this.user_registration_data.age,
+        agreetc: this.user_registration_data.agreetc,
+        dob: this.user_registration_data.dob,
+        email: this.user_registration_data.email,
+        gender: this.user_registration_data.gender,
         address: {
-          id: this.user_reg_data.id,
-          addressLine1: this.user_reg_data.address.addressLine1,
-          addressLine2: this.user_reg_data.address.addressLine2,
-          city: this.user_reg_data.city,
-          state: this.user_reg_data.state,
-          zipCode: this.user_reg_data.address.zipCode,
+          id: this.user_registration_data.id,
+          addressLine1: this.user_registration_data.addLine1,
+          addressLine2: this.user_registration_data.addLine2,
+          city: this.user_registration_data.city,
+          state: this.user_registration_data.state,
+          zipCode: this.user_registration_data.zipCode,
         },
-        language: this.user_reg_data.language,
-        mobileNumber: this.user_reg_data.mobileNumber,
-        name: this.user_reg_data.name,
-        password: this.user_reg_data.password,
+        language: this.user_registration_data.language,
+        mobileNumber: this.user_registration_data.mobileNumber,
+        name: this.user_registration_data.name,
+        password: this.user_registration_data.password,
         uploadPhoto:
-          this.user_reg_data.uploadPhoto == ''
+          this.user_registration_data.uploadPhoto == ''
             ? this.upload_file_name
-            : this.user_reg_data.uploadPhoto,
-        role: this.user_reg_data.role,
+            : this.user_registration_data.uploadPhoto,
+        role: this.user_registration_data.role,
       };
     }
     this._adminService.editUser(this.user_dto, this.edit_user_id).subscribe(
       (data) => {
-        this.add_edit_user_form.reset();
+        console.log(data, 'returned from there');
         this.getAllUser();
-        jQuery('#addEditUserModal').modal('toggle');
+        this.add_edit_user_form.reset();
+        $('#addEditUserModal').modal('toggle');
       },
       (error) => console.error('Error opening form', error)
     );
   }
+
   deleteUser(userId: any) {
     Swal.fire({
       title: 'Are you sure?',

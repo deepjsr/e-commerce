@@ -1,1 +1,133 @@
-<p>product works!</p>
+<br>
+<div class="row">
+  <div class="col-md-10">
+    <strong>All Product List</strong>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-dark float-right" type="button" (click)="addProductPopup()" data-bs-toggle="modal"
+      data-bs-target="#addEditProductModal">Add
+      Product</button>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Display Image</th>
+      <th scope="col">Mrp</th>
+      <th scope="col">DP</th>
+      <th scope="col">Product desc.</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of all_product_data;let i=index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{product.name}}</td>
+      <td><img style="border-radius: 50%;height: 100px;width: 100px;" src={{product.uploadPhoto}}></td>
+      <td>{{product.mrp}}</td>
+      <td>{{product.dp}}</td>
+      <td style="max-width: 125px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis;">
+        {{product.productDesc}}
+      </td>
+      <td>{{product.status}}</td>
+      <td>
+        <span class="sim-pointer" (click)="editProductPopUp(product.id)" data-bs-toggle="modal"
+          data-bs-target="#addEditProductModal">Edit</span>&nbsp;
+        <span class="sim-pointer" (click)="deleteProduct(product.id)">Delete</span>
+        <!-- <a href="">Edit</a><span>delete</span> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="addEditProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{popUpHeader}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-10 offset md-1">
+            <form [formGroup]="addEditProductForm">
+              <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" class="form-control" formControlName="name">
+              </div>
+              <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" class="form-control" formControlName="name">
+              </div>
+              <div class="form-group">
+                <label for="productImage">Product Image URL </label>
+                <input type="url" class="form-control" formControlName="uploadPhoto">
+              </div>
+              <div class="form-group">
+                <label for="productDescription">Product Description </label>
+                <textarea rows="3" class="form-control" formControlName="productDesc"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="productMRP">Product MRP </label>
+                <input type="text" class="form-control" formControlName="mrp">
+              </div>
+              <div class="form-group">
+                <label for="productDP">Product DP </label>
+                <input type="text" class="form-control" formControlName="dp">
+              </div>
+              <div class="form-group">
+                <label for="productStatus">Product Status </label>
+                <!-- <select class="form-control" formControlName="status"> -->
+                <div class="form-control">
+                  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected>Select status</option>
+                    <option value="1">Inactive</option>
+                    <option value="2">Draft</option>
+                    <option value="3">Publish</option>
+                  </select>
+                </div>
+                <!-- <option value="draft">Draft</option>
+                  <option value="inactive">Inactive</option>
+                  <option value="publish">Publish</option> -->
+                <!-- </select> -->
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button *ngIf="add_product" type="button" class="btn btn-primary" (click)="addNewProduct()">Save
+          changes</button>
+        <button *ngIf="edit_product" type="button" class="btn btn-warning" (click)="updateProduct()">Save
+          changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal fade" id="addEditProductModal" tabindex="-1" role="dialog" aria-labelledby="addEditUserTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          {{popUpHeader}}
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close " data-bs-dismiss="modal" aria-label="close" aria-hidden="true">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+    </div>
+  </div>
+
+</div> -->

@@ -1,13 +1,11 @@
 <app-header></app-header>
-<button
-  ngxScrollTop
-  [ngxScrollTopMode]="'smart'"
-  class="my-custom-style"
-  color="primary"
-  mat-mini-fab
->
+<button ngxScrollTop [ngxScrollTopMode]="'smart'" class="my-custom-style" color="primary" mat-mini-fab>
   top
 </button>
 <router-outlet (activate)="active()" />
-<app-footer></app-footer>
+<main class="container" [ngStyle]="{'min-height.px': footerMaxHeight}">
+  <router-outlet></router-outlet>
+</main>
 <ngx-scrolltop></ngx-scrolltop>
+<hr class="featurtte-divider mt-3">
+<app-footer></app-footer>

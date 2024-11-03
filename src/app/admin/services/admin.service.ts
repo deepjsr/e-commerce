@@ -37,7 +37,7 @@ export class AdminService {
   }
 
   editUser(user_dto: any, user_id: any): Observable<any> {
-    return this._apiService.put(this.user_URL + user_id, user_dto);
+    return this._apiService.put(this.user_URL + '/' + user_id, user_dto);
   }
 
   // delete user

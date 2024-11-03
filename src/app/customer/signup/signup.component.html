@@ -3,7 +3,7 @@
     <div class="form-row">
       <div class="col-md-6 offset-md-3">
         <h3>Registration - Angular 17 Reactive Forms with validation</h3>
-        <form  [formGroup]="signUpForm" (ngSubmit)="onSubmitSignUp()">
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmitSignUp()">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" formControlName="name">
@@ -105,8 +105,8 @@
           </div>
         </form>
       </div>
-      <p class="sim-pointer" routerLink="/sign-in">Already have an accoount Click here to <a href="/sign-in">login</a></p>
+      <p class="sim-pointer" routerLink="/sign-in">Already have an accoount Click here to <a href="/sign-in">login</a>
+      </p>
     </div>
-
   </div>
 </div>

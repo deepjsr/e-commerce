@@ -1,158 +1,114 @@
 {
   "user": [
     {
-      "name": "Vinod Behra",
-      "mobNumber": "1234567891",
-      "age": 29,
-      "dob": "1995-05-12",
-      "email": "viond12@gmail.com",
-      "password": "1234b6a",
+      "name": "Aarav Sharma",
+      "mobileNumber": "9876543210",
+      "age": 32,
+      "dob": "1991-03-15",
+      "email": "aarav.sharma@example.com",
+      "password": "pass1234",
       "address": {
-        "addLine1": "District Center",
-        "addLine2": "Janakpuri",
-        "city": "Gurgaon",
+        "addLine1": "South Block",
+        "addLine2": "Connaught Place",
+        "city": "New Delhi",
         "state": "New Delhi",
-        "zipCode": "110052"
+        "zipCode": "110001"
       },
-      "language": ["English", "Hindi", "Bhojpuri", "Telgu", "Kannada"],
+      "language": ["English", "Hindi"],
       "gender": "Male",
-      "aboutYou": "I am a programmer...",
-      "uploadPhoto": "ashish.png",
+      "aboutYou": "I am a software engineer...",
+      "uploadPhoto": "aarav.png",
       "agreetc": true,
       "role": "admin",
-      "id": 2
+      "id": 3
     },
     {
-      "name": "Ravi Kumar",
-      "mobNumber": "7894561230",
+      "name": "Meera Nair",
+      "mobileNumber": "2109876543",
+      "age": 34,
+      "dob": "1990-09-16",
+      "email": "meera.nair@example.com",
+      "password": "meera@567",
+      "address": {
+        "addLine1": "Marine Drive",
+        "addLine2": "Churchgate",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400020"
+      },
+      "language": ["English", "Malayalam", "Hindi"],
+      "gender": "Female",
+      "aboutYou": "I am a frontend developer...",
+      "uploadPhoto": "meera.png",
+      "agreetc": true,
+      "role": "admin",
+      "id": 10
+    },
+    {
+      "name": "Amit Singh",
+      "mobileNumber": "1098765432",
+      "age": 31,
+      "dob": "1992-06-25",
+      "email": "amit.singh@example.com",
+      "password": "amitpass654",
+      "address": {
+        "addLine1": "Central Avenue",
+        "addLine2": "Andheri",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400053"
+      },
+      "language": ["English", "Hindi", "Marathi"],
+      "gender": "Male",
+      "aboutYou": "I am a cloud architect...",
+      "uploadPhoto": "amit.png",
+      "agreetc": true,
+      "role": "buyer",
+      "id": 11
+    },
+    {
+      "aboutYou": "I am a data analyst.",
       "age": 30,
+      "agreetc": true,
       "dob": "1993-01-23",
       "email": "ravi.kumar23@yahoo.com",
-      "password": "ravi@123",
+      "gender": "Female",
       "address": {
-        "addLine1": "M.G Road",
-        "addLine2": "Sector 14",
+        "addressLine1": "d",
+        "addressLine2": "test22",
         "city": "Gurgaon",
-        "state": "Haryana",
+        "state": "MP",
         "zipCode": "122001"
       },
-      "language": ["English", "Hindi", "Punjabi"],
-      "gender": "Male",
-      "aboutYou": "I am a data analyst.",
-      "uploadPhoto": "ravi.png",
-      "agreetc": true,
+      "language": ["hindi", "telgu"],
+      "mobileNumber": "7894561230",
+      "name": "Ravi Kumar Mehra",
+      "password": "ravi@123",
+      "uploadPhoto": "C:\\fakepath\\Untitled (1).png",
       "role": "seller",
       "id": 4
     },
     {
-      "name": "Sneha Verma",
-      "mobNumber": "9638527410",
-      "age": 28,
-      "dob": "1996-04-18",
-      "email": "snehaverma96@hotmail.com",
-      "password": "snehapass",
-      "address": {
-        "addLine1": "Connaught Place",
-        "addLine2": "Central Delhi",
-        "city": "New Delhi",
-        "state": "Delhi",
-        "zipCode": "110001"
-      },
-      "language": ["English", "Hindi", "Bengali"],
-      "gender": "Female",
-      "aboutYou": "I am a UI/UX designer.",
-      "uploadPhoto": "sneha.png",
+      "age": 30,
+      "aboutYou": "Hello",
       "agreetc": true,
-      "role": "buyer",
-      "id": 5
-    },
-    {
-      "name": "Arjun Mehta",
-      "mobNumber": "7410852963",
-      "age": 35,
-      "dob": "1989-09-12",
-      "email": "arjun_mehta@gmail.com",
-      "password": "arjun1989",
+      "dob": "2024-09-15",
+      "email": "tha@gmail.com",
+      "gender": "male",
       "address": {
-        "addLine1": "Sector 15",
-        "addLine2": "Dwarka",
-        "city": "New Delhi",
-        "state": "Delhi",
-        "zipCode": "110075"
+        "addressLine1": "beeker street",
+        "addressLine2": "amullapatti",
+        "city": "Gurgaon",
+        "state": "MP",
+        "zipCode": "122001"
       },
-      "language": ["English", "Hindi"],
-      "gender": "Male",
-      "aboutYou": "I am a marketing strategist.",
-      "uploadPhoto": "arjun.png",
-      "agreetc": true,
+      "language": ["telgu", "odiya"],
+      "mobileNumber": "7894561230",
+      "name": "Ravi Shukla",
+      "password": "tha@gtyhey",
+      "uploadPhoto": "C:\\fakepath\\20240801015850-A_photorealistic_portrait_of_a.png",
       "role": "seller",
-      "id": 6
-    },
-    {
-      "name": "Aarti Sharma",
-      "mobNumber": "8529631470",
-      "age": 32,
-      "dob": "1991-03-05",
-      "email": "aartisharma91@gmail.com",
-      "password": "aartipass",
-      "address": {
-        "addLine1": "Kalyani Nagar",
-        "addLine2": "Pune",
-        "city": "Pune",
-        "state": "Maharashtra",
-        "zipCode": "411014"
-      },
-      "language": ["English", "Marathi", "Hindi"],
-      "gender": "Female",
-      "aboutYou": "I am a digital marketer.",
-      "uploadPhoto": "aarti.png",
-      "agreetc": true,
-      "role": "buyer",
-      "id": 7
-    },
-    {
-      "name": "Deepak Rao",
-      "mobNumber": "7981234560",
-      "age": 40,
-      "dob": "1983-10-19",
-      "email": "deepak_rao83@outlook.com",
-      "password": "deepak83",
-      "address": {
-        "addLine1": "Whitefield",
-        "addLine2": "Bangalore",
-        "city": "Bangalore",
-        "state": "Karnataka",
-        "zipCode": "560066"
-      },
-      "language": ["English", "Kannada", "Telugu", "Hindi"],
-      "gender": "Male",
-      "aboutYou": "I am a project manager.",
-      "uploadPhoto": "deepak.png",
-      "agreetc": true,
-      "role": "seller",
-      "id": 8
-    },
-    {
-      "name": "Meera Iyer",
-      "mobNumber": "9087412583",
-      "age": 29,
-      "dob": "1995-11-02",
-      "email": "meera.iyer95@gmail.com",
-      "password": "meera123",
-      "address": {
-        "addLine1": "Nungambakkam",
-        "addLine2": "Chennai",
-        "city": "Chennai",
-        "state": "Tamil Nadu",
-        "zipCode": "600034"
-      },
-      "language": ["English", "Tamil", "Hindi"],
-      "gender": "Female",
-      "aboutYou": "I am a content writer.",
-      "uploadPhoto": "meera.png",
-      "agreetc": true,
-      "role": "buyer",
-      "id": 9
+      "id": 12
     }
   ],
   "products": [
@@ -177,7 +133,7 @@
     {
       "id": 3,
       "name": "Metro Living Self Design Pillows Cover ",
-      "uploadPhoto": "https://rukminimi.flixcart.com/image/832/832/jjsu4nk@/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ahőzstjyevd.jpeg",
+      "uploadPhoto": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
       "productDesc": "Regional Speciality\nRajasthan\nFabric Care\n/lachinne Wash, Do not Bleach, Wash in Cold Water\nThread Count\n184\nSales Package\nPack of 2 Pillow Cover",
       "mгр": "500",
       "dp": "399",
@@ -186,7 +142,7 @@
     {
       "id": 4,
       "name": "Metro Living Self Design Pillows Cover",
-      "uploadPhoto": "https://rukminimi.flixcart.com/image/632/832/jjsw4nk@/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ah6zstjyevd.jpeg",
+      "uploadPhoto": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "productDesc": "Regional Speciality\nRajasthan\nFabric Care\n/Machinne Wash, Do not Bleach, Wash in Cold Water\nThread Count\n104\nSales Package\nPack of 2 Pillow Cover",
       "mгр": "500",
       "dp": "399",
@@ -250,7 +206,7 @@
   "orders": [
     {
       "id": 1,
-      "userId": 3,
+      "buyerId": 3,
       "sellerId": 2,
       "product": {
         "id": 1,
@@ -271,6 +227,174 @@
       },
       "contact": "09040398006",
       "dateTime": "18/07/2019"
+    },
+    {
+      "id": 2,
+      "userId": 11,
+      "sellerId": 2,
+      "product": {
+        "name": "Metro Living Self Design Pillows Cover",
+        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jjsw4nk0/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ah6zstjyevd.jpeg",
+        "mrp": "500",
+        "dp": "399",
+        "status": "draft"
+      },
+      "deliverAdress": {
+        "id": 0,
+        "addLine1": "Central Avenue",
+        "addLine2": "Andheri",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400053"
+      },
+      "date": "17/9/2024"
+    },
+    {
+      "id": 3,
+      "userId": 11,
+      "sellerId": 2,
+      "product": {
+        "name": "Metro Living Self Design Pillows Cover",
+        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jjsw4nk0/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ah6zstjyevd.jpeg",
+        "mrp": "500",
+        "dp": "399",
+        "status": "draft"
+      },
+      "deliverAdress": {
+        "id": 0,
+        "addLine1": "Central Avenue",
+        "addLine2": "Andheri",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400053"
+      },
+      "contact": "1098765432",
+      "date": "17/9/2024"
+    },
+    {
+      "id": 4,
+      "userId": 11,
+      "sellerId": 2,
+      "product": {
+        "name": "Metro Living Self Design Pillows Cover",
+        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jjsw4nk0/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ah6zstjyevd.jpeg",
+        "mrp": "500",
+        "dp": "399",
+        "status": "draft"
+      },
+      "deliverAdress": {
+        "id": 0,
+        "addLine1": "Central Avenue",
+        "addLine2": "Andheri",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400053"
+      },
+      "contact": "1098765432",
+      "date": "17/9/2024"
+    },
+    {
+      "id": 5,
+      "userId": 11,
+      "sellerId": 2,
+      "product": {
+        "name": "Metro Living Self Design Pillows Cover",
+        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jjsw4nk0/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ah6zstjyevd.jpeg",
+        "mrp": "500",
+        "dp": "399",
+        "status": "draft"
+      },
+      "deliverAdress": {
+        "id": 0,
+        "addLine1": "Central Avenue",
+        "addLine2": "Andheri",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400053"
+      },
+      "contact": "1098765432",
+      "date": "17/9/2024"
+    },
+    {
+      "id": 6,
+      "userId": 11,
+      "sellerId": 2,
+      "product": {},
+      "deliverAdress": {
+        "id": 0,
+        "addLine1": "Central Avenue",
+        "addLine2": "Andheri",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400053"
+      },
+      "contact": "1098765432",
+      "date": "17/9/2024"
+    },
+    {
+      "id": 7,
+      "userId": 11,
+      "sellerId": 2,
+      "product": {
+        "name": "Metro Living Self Design Pillows Cover",
+        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jjsw4nk0/cushion-pillow-cover/e/z/z/epl12-metro-living-original-imaf7ah6zstjyevd.jpeg",
+        "mrp": "500",
+        "dp": "399",
+        "status": "draft"
+      },
+      "deliverAdress": {
+        "id": 0,
+        "addLine1": "Central Avenue",
+        "addLine2": "Andheri",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400053"
+      },
+      "contact": "1098765432",
+      "date": "17/9/2024"
+    },
+    {
+      "id": 8,
+      "userId": 11,
+      "sellerId": 2,
+      "product": {
+        "name": "Metro Living Self Design Pillows Cover ",
+        "uploadPhoto": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+        "dp": "399",
+        "status": "draft"
+      },
+      "deliverAdress": {
+        "id": 0,
+        "addLine1": "Central Avenue",
+        "addLine2": "Andheri",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400053"
+      },
+      "contact": "1098765432",
+      "date": "17/9/2024"
+    },
+    {
+      "id": 9,
+      "userId": 11,
+      "sellerId": 2,
+      "product": {
+        "name": "TIZUM Aluminium Portable Stand",
+        "uploadPhoto": "https://rukminim1.flixcart.com/image/832/832/jx0prbk0/mobile-holder/t/3/d/aluminium-portable-stand-with-convenient-charging-port-design- original-imafhkkxjvphhhgz.jpeg",
+        "mrp": "300",
+        "dp": "199",
+        "status": "inactive"
+      },
+      "deliverAdress": {
+        "id": 0,
+        "addLine1": "Central Avenue",
+        "addLine2": "Andheri",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "zipCode": "400053"
+      },
+      "contact": "1098765432",
+      "date": "17/9/2024"
     }
   ]
 }

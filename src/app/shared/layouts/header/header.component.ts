@@ -56,10 +56,22 @@ export class HeaderComponent implements OnInit {
     this._router.navigateByUrl('/sign-in');
     location.reload();
   }
+
   setMood() {
     var element = document.body;
     this.enabledarkmood = !this.enabledarkmood;
-    element.dataset['bsTheme'] =
-      element.dataset['bsTheme'] == 'light' ? 'dark' : 'light';
+    element.dataset['bsTheme'] == undefined
+      ? element.setAttribute('data-bs-theme', 'dark')
+      : element.dataset['bsTheme'] == 'dark'
+      ? element.setAttribute('data-bs-theme', 'light')
+      : element.setAttribute('data-bs-theme', 'dark');
+
+    // if (document.body.classList.contains('dark-theme')) {
+    //   document.body.classList.remove('dark-theme');
+    //   document.body.classList.add('light-theme');
+    // } else {
+    //   document.body.classList.add('dark-theme');
+    //   document.body.classList.remove('light-theme');
+    // }
   }
 }
